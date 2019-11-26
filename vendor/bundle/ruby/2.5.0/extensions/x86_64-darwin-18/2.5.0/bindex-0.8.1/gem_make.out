@@ -1,0 +1,15 @@
+current directory: /Users/kazuhiromatsubara/RubymineProjects/app_for_sky/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/kazuhiromatsubara/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20191127-45812-7q67gv.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kazuhiromatsubara/RubymineProjects/app_for_sky/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/kazuhiromatsubara/RubymineProjects/app_for_sky/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/kazuhiromatsubara/RubymineProjects/app_for_sky/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20191127-45812-fzxhzy/skiptrace/internal

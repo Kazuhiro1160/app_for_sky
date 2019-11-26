@@ -1,0 +1,15 @@
+current directory: /Users/kazuhiromatsubara/RubymineProjects/app_for_sky/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/ext/bootsnap
+/Users/kazuhiromatsubara/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20191127-45812-ywsi7t.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kazuhiromatsubara/RubymineProjects/app_for_sky/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/kazuhiromatsubara/RubymineProjects/app_for_sky/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/kazuhiromatsubara/RubymineProjects/app_for_sky/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20191127-45812-1kukqli/bootsnap
