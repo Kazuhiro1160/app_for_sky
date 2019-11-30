@@ -1,0 +1,48 @@
+body{
+    background-color: #2E2F30;
+}
+.center-container {
+    text-align: center;
+    width: 30rem;
+    margin: 10rem auto 4rem auto;
+    /*background-color: rgba(0,0,0,0.5) !important;*/
+    padding: 2rem;
+}
+
+.inner-container .glyphicon-list-alt {
+    font-size: 10rem;
+    margin-top: 3rem;
+    color: #f96145;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 1.4rem;
+    padding: 1rem;
+    background-color: #ecf2f4;
+    border-radius: 0.2rem;
+    border: none;
+}
+.name-display {
+    margin-bottom: 0;
+}
+
+.btn {
+    border-radius: 0.2rem;
+}
+.btn .glyphicon {
+    font-size: 3rem;
+    color: #fff;
+}
+
+
+.box {
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.warning-box{
+    display: block;
+    margin: 0 auto;
+}

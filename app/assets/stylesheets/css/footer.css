@@ -1,0 +1,15 @@
+
+footer { width:100%; background-color:#263238; height:auto; padding:10px 0px 15px 0px ;}
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.foote_bottom_ul_amrc {
+    list-style-type:none;
+    padding:0px;
+    display:table;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+}
+.foote_bottom_ul_amrc span { color: #CCC; font-size:1.3em;}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
