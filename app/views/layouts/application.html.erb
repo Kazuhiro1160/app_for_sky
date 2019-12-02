@@ -8,14 +8,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "css/generall_utility", media: 'all' %>
-
+    <%= stylesheet_link_tag "css/modern", media: 'all' %>
   </head>
-
   <body>
 
     <%= yield %>
 
-    <%#= debug(params) if Rails.env.development? %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

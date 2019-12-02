@@ -16,7 +16,7 @@
 //stylesheets以下の全CSSファイルを読み込むことを指定
 // *= require_tree .
  //application.css自体を最終的なスタイルシートに含めることを指定
- //*= require_self
+ *= require_self
  */
 
 /*miscellaneous*/
@@ -32,8 +32,8 @@
 }
 
 pre {
+  background-color: #fafafa;
   padding: 1.538rem;
   border: 0;
   border-radius: 0;
-  background-color: #fafafa;
 }
