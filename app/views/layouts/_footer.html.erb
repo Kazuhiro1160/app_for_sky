@@ -1,11 +1,24 @@
-<footer>
-  <div class="container">
-    <ul class="foote_bottom_ul_amrc">
-      <li><a href="" target="_blank">運営元</a></li><span>|</span>
-      <li><%= link_to "利用規約", "#", :target=>["_blank"] %></li><span>|</span>
-      <li><%= link_to "プライバシーポリシー","#", :target=>["_blank"] %></li>
-    </ul>
-    <p class="text-center">Copyright @2019 | Designed With by <a href="#">Notogawa SKY</a></p>
-
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-muted">
+      <div class="text-center mb-1">
+        <ul class="list-inline list-color-mut">
+          <li class="list-inline-item">
+            <a class="text-muted" href="#">運営元</a>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to "利用規約", "#", :target=>["_blank"] %>
+          </li>
+          <li class="list-inline-item">
+          <%= link_to "プライバシーポリシー", "#" , :target=>["_blank"] %>
+          </li>
+        </ul>
+      </div>
+      <div class="text-center">
+        <p class="mb-0">
+          © 2019 - <a href="#" class="text-muted">Notogawa SKY</a>
+        </p>
+      </div>
+    </div>
   </div>
 </footer>
