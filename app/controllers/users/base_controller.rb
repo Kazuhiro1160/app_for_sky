@@ -1,6 +1,7 @@
 class Users::BaseController < ApplicationController
-  before_action authenticate_user!
+  before_action :authenticate_user!
   before_action :set_up
+  before_action :fg_check
 
   layout 'render_users'
 
@@ -11,7 +12,7 @@ class Users::BaseController < ApplicationController
 
     def fg_check
       if controller_name != 'edit_passwords' && @user.set_fg == true
-        redirect_to edit_users_edit_password_path(@user)
+        redirect_to edit_users_edit_password_path(@user.id)
       end
     end
 end
