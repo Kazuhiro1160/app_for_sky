@@ -1,78 +1,54 @@
 <main class="main d-flex w-100">
   <div class="container d-flex flex-column">
     <div class="h-100">
-      <div class="my-6">
-        <div class="text-center">
-          <h1 class="h1 mb-3">ユーザー登録</h1>
-        </div>
-        <div class="col-md-9 col-xl-10 col-sm-12 mx-auto">
+      <div class="pt-4">
+        <div class="col-md-12 col-xl-10 mx-auto">
           <div class="tab-content">
-            <div class="tab-pane fade show active" id="account" role="tabpanel">
+            <div class="pb-2">
+              <h1 class="h3">アカウント登録</h1>
+            </div>
 
-              <div class="card">
-                <div class="card-header">
-                  <div class="card-actions float-right">
-                    <div class="dropdown show">
-                      <a href="#" data-toggle="dropdown" data-display="static">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal align-middle"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                      </a>
-
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
+            <div class="card">
+              <div class="card-body">
+                <%= form_for( user, url: url ) do |f| %>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>姓</label>
+                      <%= f.text_field :first_name, autocomplete: 'off', required: true, class: 'form-control form-control-lg', placeholder: 'First name'%>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>名</label>
+                      <%= f.text_field :last_name, autocomplete: 'off', required: true, class: 'form-control form-control-lg', placeholder: 'Last name' %>
                     </div>
                   </div>
-                  <h5 class="card-title mb-0">Private info</h5>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputFirstName">First name</label>
-                        <input type="text" class="form-control" id="inputFirstName" placeholder="First name">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputLastName">Last name</label>
-                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+                  <div class="form-group">
+                    <label for="user_email">Email</label>
+                    <%= f.email_field :email, autocomplete: 'off', required: true, class: 'form-control form-control-lg', placeholder: 'Email' %>
+                  </div>
+                  <% if user.admin == false %>
+                    <div class="form-group">
+                      <label>性別</label>
+                      <div class="form-row pl-2">
+                        <label class="custom-control custom-radio mr-md-4 mr-2">
+                          <%= f.radio_button :sex, true, id: 'man',required: true, class: 'custom-control-input' %>
+                          <span class="custom-control-label">男性</span>
+                        </label>
+                        <label class="custom-control custom-radio">
+                          <%= f.radio_button :sex, false, id: 'woman',required: true, class: 'custom-control-input' %>
+                          <span class="custom-control-label">女性</span>
+                        </label>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="inputEmail4">Email</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                      <label for="user_user_grade">学年</label>
+                      <%= f.select :user_grade, { '中1' => 1, '中2' => 2, '中3' => 3}, {include_blank: '選択してください'}, required: true, class: 'form-control form-control-lg' %>
                     </div>
-                    <div class="form-group">
-                      <label for="inputAddress">Address</label>
-                      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                    </div>
-                    <div class="form-group">
-                      <label for="inputAddress2">Address 2</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                          <option selected="">Choose...</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-2">
-                      <label for="inputZip">Zip</label>
-                      <input type="text" class="form-control" id="inputZip">
-                    </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                  </form>
-
-                </div>
+                  <% end %>
+                  <div class="text-md-right text-center p-2">
+                    <button type="submit" class="btn btn-primary">登録</button>
+                  </div>
+                <% end %>
               </div>
-
             </div>
           </div>
         </div>

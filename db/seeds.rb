@@ -33,6 +33,7 @@ end
     m.email = 'user'+"#{uele}"+'@example.com'
     m.login_id = "#{id}" + "#{uele}"
     m.password = "#{id}" + "#{uele}"
+    m.sex = "0"
     m.pass_fog = 1
     m.admin = 0
     if uele >= 15

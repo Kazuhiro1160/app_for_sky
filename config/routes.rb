@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   namespace :users do
     resources :edit_passwords, only: [:edit, :update]
     resources :user_infos, only:[:edit, :update]
+    resources :user_mains, only:[:edit, :update]
   end
 end
