@@ -1,13 +1,13 @@
 class Users::EditPasswordsController < Users::BaseController
   def edit
-    if @user.pass_fog == false
+    if @user.pass_fg == false
       redirect_to errors_index_path
     end
   end
 
   def update
     if params[:part][:usr_password] == params[:part][:password_conf]
-      if @user.update(password: params[:part][:usr_password], pass_fog: false)
+      if @user.update(password: params[:part][:usr_password], pass_fg: false)
         sign_in(@user, bypass: true)
         redirect_to edit_users_user_info_path(current_user.id)
       elsif params[:part][:usr_password].size < 6

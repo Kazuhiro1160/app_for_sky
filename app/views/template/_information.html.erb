@@ -1,6 +1,6 @@
-<main class="main d-flex w-100">
+<main class="d-flex w-100" id="wrapper">
   <div class="container d-flex flex-column">
-    <div class="h-100">
+    <div class="h-auto">
       <div class="pt-4">
         <div class="col-md-12 col-xl-10 mx-auto">
           <div class="tab-content">
@@ -25,25 +25,23 @@
                     <label for="user_email">Email</label>
                     <%= f.email_field :email, autocomplete: 'off', required: true, class: 'form-control form-control-lg', placeholder: 'Email' %>
                   </div>
-                  <% if user.admin == false %>
                     <div class="form-group">
                       <label>性別</label>
                       <div class="form-row pl-2">
                         <label class="custom-control custom-radio mr-md-4 mr-2">
-                          <%= f.radio_button :sex, true, id: 'man',required: true, class: 'custom-control-input' %>
+                          <%= f.radio_button :usr_sex, true, id: 'man',required: true, class: 'custom-control-input' %>
                           <span class="custom-control-label">男性</span>
                         </label>
                         <label class="custom-control custom-radio">
-                          <%= f.radio_button :sex, false, id: 'woman',required: true, class: 'custom-control-input' %>
+                          <%= f.radio_button :usr_sex, false, id: 'woman',required: true, class: 'custom-control-input' %>
                           <span class="custom-control-label">女性</span>
                         </label>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="user_user_grade">学年</label>
-                      <%= f.select :user_grade, { '中1' => 1, '中2' => 2, '中3' => 3}, {include_blank: '選択してください'}, required: true, class: 'form-control form-control-lg' %>
+                      <%= f.select :usr_grade, { '中1' => 1, '中2' => 2, '中3' => 3}, {include_blank: '選択してください'}, required: true, class: 'form-control form-control-lg' %>
                     </div>
-                  <% end %>
                   <div class="text-md-right text-center p-2">
                     <button type="submit" class="btn btn-primary">登録</button>
                   </div>

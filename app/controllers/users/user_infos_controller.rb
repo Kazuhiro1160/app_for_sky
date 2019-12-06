@@ -3,14 +3,16 @@ class Users::UserInfosController < Users::BaseController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to edit_users_user_main_path(@user.id)
+    if @user.update(user_params)
+      @user.update(:set_fg => false)
+      redirect_to edit_users_user_main_path(@user.id)
+    end
   end
 
   private
 
     def user_params
       params.require(:user).permit(:first_name, :last_name,
-                                   :email, :sex, :user_grade)
+                                   :email, :usr_sex, :usr_grade)
     end
 end

@@ -1,3 +1,11 @@
 .list-color-mut a{
     color: #6c757d !important;
 }
+
+#wrapper {
+    min-height: calc(100% - 4.6rem);
+}
+
+.footer{
+    height: 4.6rem;
+}

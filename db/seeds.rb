@@ -11,19 +11,19 @@ Admin.find_or_create_by(id:1) do |admin|
 end
 
 
-User.find_or_create_by(id: 1) do |user|
-  user.first_name = 'Matsubara'
-  user.last_name = 'Noriko'
-  user.email = adm_email
-  user.login_id = adm_pass
-  user.password = adm_pass
-  user.pass_fog = 0
-  user.admin = 1
-  user.user_grade = 100
-end
+# User.find_or_create_by(id: 1) do |user|
+#   user.first_name = 'Matsubara'
+#   user.last_name = 'Noriko'
+#   user.email = adm_email
+#   user.login_id = adm_pass
+#   user.password = adm_pass
+#   user.pass_fg = 0
+#   user.admin = 1
+#   user.user_grade = 100
+# end
 
 
-(1..20).to_a.each do |uele|
+(1..30).to_a.each do |uele|
   mem = uele + 1
   id =random_uid(8)
 
@@ -31,17 +31,32 @@ end
     m.first_name = '小林'
     m.last_name = '一郎'
     m.email = 'user'+"#{uele}"+'@example.com'
-    m.login_id = "#{id}" + "#{uele}"
+    m.usr_login_id = "#{id}" + "#{uele}"
     m.password = "#{id}" + "#{uele}"
-    m.sex = "0"
-    m.pass_fog = 1
-    m.admin = 0
-    if uele >= 15
-      m.user_grade = 3
-    elsif uele >= 8
-      m.user_grade = 2
+    m.usr_sex = "0"
+    m.pass_fg = 1
+    m.set_fg = 1
+    if uele >= 21
+      m.usr_grade = 3
+      if uele >= 26
+        m.usr_class = 6
+      else
+        m.usr_class = 5
+      end
+    elsif uele >= 11
+      m.usr_grade = 2
+      if uele >= 16
+        m.usr_class = 4
+      else
+        m.usr_class = 3
+      end
     else
-      m.user_grade = 1
+      m.usr_grade = 1
+      if uele >= 6
+        m.usr_class = 2
+      else
+        m.usr_class = 1
+      end
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_084745) do
+ActiveRecord::Schema.define(version: 2019_12_06_155832) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +24,28 @@ ActiveRecord::Schema.define(version: 2019_12_03_084745) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.integer "reply_comment_id"
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["created_at"], name: "index_comments_on_created_at"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["reply_comment_id"], name: "index_comments_on_reply_comment_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["created_at"], name: "index_posts_on_created_at"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
     t.string "encrypted_password", default: "", null: false
@@ -32,14 +54,19 @@ ActiveRecord::Schema.define(version: 2019_12_03_084745) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "login_id", default: "", null: false
+    t.string "usr_login_id", default: "", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "sex"
-    t.integer "user_grade", default: 1
-    t.boolean "pass_fog", default: true
-    t.boolean "admin", default: false
+    t.string "usr_sex"
+    t.integer "usr_grade", null: false
+    t.boolean "pass_fg", default: true, null: false
+    t.boolean "set_fg", default: true, null: false
+    t.integer "usr_class", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "users"
 end
