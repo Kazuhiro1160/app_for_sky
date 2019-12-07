@@ -3,22 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slat</title>
+    <title>S-lat</title>
     <%= favicon_link_tag 'slat-favicon-logo.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "css/modern", media: 'all' %>
+    <%= stylesheet_link_tag "css/classic", media: 'all' %>
     <%= stylesheet_link_tag "css/footer", media: 'all' %>
   </head>
 
   <body>
+    <div class="wrapper">
+      <%= render partial: "layouts/sidebar" %>
+      <div class="main">
+        <%= render partial: "layouts/navbar" %>
 
-    <%= yield %>
+        <%= yield %>
+        <% unless controller_name == 'timelines' %>
+         <%= render partial: "layouts/footer" %>
+        <% end %>
 
-    <%= render partial: "layouts/footer" %>
-    <%#= debug(params) if Rails.env.development? %>
+      </div>
+    </div>
+  <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

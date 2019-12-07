@@ -3,7 +3,6 @@ class Users::BaseController < ApplicationController
   before_action :set_up
   before_action :fg_check
 
-  layout 'render_users'
 
   private
     def set_up

@@ -1,0 +1,33 @@
+<main class="content">
+  <div class="container-fluid p-0">
+
+    <div class="col-md-8 col-xl-9 mx-auto">
+      <div class="card">
+        <div class="card-header border-bottom">
+          <h5 class="card-title mb-0">タイムライン(<%= @grade %>)</h5>
+        </div>
+        <div class="card-body h-100">
+          <% @posts.each do |post| %>
+          <div class="media">
+<!--            画像の表示-->
+<!--            <img src="img/avatars/avatar-5.jpg" width="36" height="36" class="rounded-circle mr-2" alt="Ashley Briggs">-->
+            <div class="media-body">
+              <small class="float-right text-navy"><%= time_ago_in_words(post.created_at) %>前</small>
+              <strong><%= Common.full_name(post.user.first_name, post.user.last_name) %></strong>
+              <small class="text-muted"><%= Common.time_display(post.created_at) %></small><br>
+              <div class="p-2 mt-1">
+                <%= post.content %>
+              </div>
+              <a href="#" class="btn btn-sm btn-danger mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart feather-sm"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> Like</a>
+            </div>
+          </div>
+          <hr>
+          <% end %>
+
+          <a href="#" class="btn btn-primary btn-block">Load more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+

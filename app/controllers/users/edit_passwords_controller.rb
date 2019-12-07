@@ -1,4 +1,5 @@
 class Users::EditPasswordsController < Users::BaseController
+  layout 'render_users_modern'
   def edit
     if @user.pass_fg == false
       redirect_to errors_index_path
