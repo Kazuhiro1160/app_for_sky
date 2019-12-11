@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'errors/index'
+  resources :timelines, only: [:new, :create]
 
 
   devise_for :admins, :controllers => {
@@ -17,6 +18,5 @@ Rails.application.routes.draw do
     resources :user_infos, only:[:edit, :update]
     resources :user_mains, only:[:edit, :update]
     resources :posts
-    resources :timelines, only: :show
   end
 end
