@@ -1,10 +1,10 @@
-<div class="post-field">
+<div class="pb-5 post-field">
   <%= form_for(@post, url: timelines_path) do |f| %>
   <div class="col-md-10 col-sm-12 d-inline-block" >
     <%= f.text_area :content, rows: 3, placeholder: '共有したいこと、質問など',class: 'form-control' %>
   </div>
 
-  <div class="col-md-2 float-md-right pt-md-3 text-right text-md-left" >
+  <div class="col-md-2 float-md-right pt-md-5 text-right text-md-left" >
     <button type="submit" class="btn-lg btn-primary "> 送信 </button>
   </div>
 

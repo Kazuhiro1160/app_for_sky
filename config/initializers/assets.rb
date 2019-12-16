@@ -10,6 +10,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( css/* )
 Rails.application.config.assets.precompile += %w( js/* )
+Rails.application.config.assets.precompile += %w( channels/room.js )
+Rails.application.config.assets.precompile += %w( cable.js )
 
 # Precompile additional assets.
 # application.js, application.css.scss, and all non-JS/CSS in the app/assets

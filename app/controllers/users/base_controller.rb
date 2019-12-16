@@ -16,5 +16,7 @@ class Users::BaseController < ApplicationController
         redirect_to edit_users_user_info_path(@user.id)
       end
     end
+
+
 end
 

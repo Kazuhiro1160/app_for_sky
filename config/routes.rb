@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'user_mains#edit'
   get 'errors/index'
-  resources :timelines, only: [:new, :create]
-
 
   devise_for :admins, :controllers => {
 
@@ -17,6 +16,12 @@ Rails.application.routes.draw do
     resources :edit_passwords, only: [:edit, :update]
     resources :user_infos, only:[:edit, :update]
     resources :user_mains, only:[:edit, :update]
-    resources :posts
   end
+
+  scope :user do
+    resources :threads, only: [:show]
+    resources :timelines, only: [:new, :create, :destroy]
+  end
+
+  # mount ActionCable.server => '/cable'
 end

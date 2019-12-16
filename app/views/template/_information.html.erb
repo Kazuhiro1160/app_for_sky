@@ -25,6 +25,7 @@
                     <label for="user_email">Email</label>
                     <%= f.email_field :email, autocomplete: 'off', required: true, class: 'form-control form-control-lg', placeholder: 'Email' %>
                   </div>
+                  <% if user.admin == false %>
                     <div class="form-group">
                       <label>性別</label>
                       <div class="form-row pl-2">
@@ -42,6 +43,7 @@
                       <label for="user_user_grade">学年</label>
                       <%= f.select :usr_grade, { '中1' => 1, '中2' => 2, '中3' => 3}, {include_blank: '選択してください'}, required: true, class: 'form-control form-control-lg' %>
                     </div>
+                  <% end %>
                   <div class="text-md-right text-center p-2">
                     <button type="submit" class="btn btn-primary">登録</button>
                   </div>

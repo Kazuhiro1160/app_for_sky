@@ -1,5 +1,5 @@
 class TimelinesController < Users::BaseController
-  layout 'render_users_classic'
+  layout 'render_users_timeline'
   before_action :set_post
 
   def new
@@ -18,6 +18,11 @@ class TimelinesController < Users::BaseController
     else
       redirect_to action: :new
     end
+  end
+
+  def destroy
+    Post.destroy(params[:id])
+    redirect_to request.referrer || root_url
   end
 
   private

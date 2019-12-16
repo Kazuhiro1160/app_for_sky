@@ -8,5 +8,6 @@ class AddColumnsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :pass_fg, :boolean, null: false, default: 1
     add_column :users, :set_fg, :boolean, null: false, default: 1
     add_column :users, :usr_class, :integer, null: false
+    add_column :users,  :admin, :boolean, null: false, default: 0
   end
 end
