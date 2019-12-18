@@ -3,9 +3,10 @@ class TimelinesController < Users::BaseController
   before_action :set_post
 
   def new
-    @users = User.where(usr_grade: @user.usr_grade)
-    @posts = Post.where(user_id: @users.ids)
     @grade = Common.user_grade(@user.usr_grade)
+    @users = User.where(usr_grade: @user.usr_grade)
+    @posts = Post.where(user_id: @users)
+    @ids = Common.change_d_id(@posts)
   end
 
   def create

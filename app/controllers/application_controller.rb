@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
         edit_users_user_info_path(current_user.id)
     end
   end
+
 end

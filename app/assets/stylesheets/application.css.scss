@@ -1,6 +1,8 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -18,6 +20,10 @@
  //application.css自体を最終的なスタイルシートに含めることを指定
  *= require_self
  */
+
+//@font-face{font-family:Font Awesome\ 5 Free;font-style:normal;font-weight:400;font-display:auto;src:url(font-path('fa-regular-400.eot'));src:url(font-path('fa-regular-400.eot?#iefix')) format("embedded-opentype"),url(font-path('fa-regular-400.woff2')) format("woff2"),url(font-path('fa-regular-400.woff')) format("woff"),url(font-path('fa-regular-400.ttf')) format("truetype"),url(font-path('fa-regular-400.svg#fontawesome')) format("svg")}.far{font-weight:400}
+//@font-face{font-family:Font Awesome\ 5 Free;font-style:normal;font-weight:900;font-display:auto;src:url(font-path('fa-regular-900.eot'));src:url(font-path('fa-regular-900.eot?#iefix')) format("embedded-opentype"),url(font-path('fa-regular-900.woff2')) format("woff2"),url(font-path('fa-regular-900.woff')) format("woff"),url(font-path('fa-regular-900.ttf')) format("truetype"),url(font-path('fa-regular-900.svg#fontawesome')) format("svg")}.fa,.far,.fas{font-family:Font Awesome\ 5 Free}.fa,.fas{font-weight:900}
+
 
 /*miscellaneous*/
 

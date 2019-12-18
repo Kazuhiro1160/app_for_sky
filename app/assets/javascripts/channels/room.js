@@ -21,6 +21,7 @@ App.room = App.cable.subscriptions.create( "RoomChannel",  {
         return this.perform('speak', {comment: comment, post_id: $("#comments").data('post_id')});
     }
 });
+
 document.addEventListener('turbolinks:load', function (){
     input = document.getElementById('comment-content');
     button = document.getElementById('submit');
@@ -31,10 +32,4 @@ document.addEventListener('turbolinks:load', function (){
     });
 });
 
-
-// turbolinks:load
-// document.addEventListener('DOMContentLoaded'), function () {
-//     const input = document.getElementById('comment-content')
-//     const button = document.getElementById('submit')
-// }
 

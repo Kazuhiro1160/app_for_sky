@@ -5,4 +5,5 @@ class ThreadsController < Users::BaseController
     @comments = @post.comments.all
   end
 
+
 end

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   scope :user do
-    resources :threads, only: [:show]
+    resources :threads, only: :show
     resources :timelines, only: [:new, :create, :destroy]
   end
 

@@ -6,6 +6,7 @@ module ApplicationCable
       self.current_user = find_verified_user
     end
 
+
     private
 
     def find_verified_user
