@@ -74,7 +74,7 @@ group :test do
 end
 
 gem 'devise'
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'webpacker'
 gem 'rails-i18n', '~> 5.1'
