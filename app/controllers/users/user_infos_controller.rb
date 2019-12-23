@@ -20,7 +20,7 @@ class Users::UserInfosController < Users::BaseController
 
     def set_already?
       if @user.set_fg == false
-        redirect_to new_timeline_path
+        redirect_to new_user_timeline_path(user_id: @user.id)
       end
     end
 end

@@ -14,10 +14,34 @@
     overflow: auto;
 }
 
-/*.post-content{*/
-/*    min-height: 2rem;*/
-/*}*/
 
 .tm-outline{
     height: 100vh;
 }
+
+.button-rgba{
+    background-color: rgba(0,0,0,0)
+}
+
+.post-content p{
+    font-size: 0.9rem;
+}
+
+.form-image{
+    display: none;
+}
+
+.mb-none{
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 425px) {
+    .img-resize{
+        text-align: center;
+    }
+    .img-resize img{
+        width: 100%;
+    }
+}
+
+

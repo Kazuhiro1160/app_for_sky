@@ -18,9 +18,9 @@ Rails.application.routes.draw do
     resources :user_mains, only:[:edit, :update]
   end
 
-  scope :user do
-    resources :threads, only: :show
-    resources :timelines, only: [:new, :create, :destroy]
+  resources :users do
+    resources :threads, shallow: true, only: :show
+    resources :timelines, shallow: true, only: [:new, :create, :destroy]
   end
 
   # mount ActionCable.server => '/cable'

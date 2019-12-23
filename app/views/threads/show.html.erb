@@ -6,7 +6,7 @@
       <%# end %>
       <div class="h-100">
         <h5 class="card-title my-2 d-inline-block ">スレッド（<small><%= @post.user.last_name %>さんの投稿</small>）</h5>
-        <button class="float-right border-0" id="windowclose" style="background-color: rgba(0,0,0,0)">
+        <button class="float-right border-0 button-rgba" id="windowclose" >
           <i class="fas fa-times fa-2x text-white "></i>
         </button>
       </div>
@@ -24,6 +24,9 @@
           <small class="text-muted"><%= Common.date_display(@post.created_at) %></small><br>
           <div class="p-2 mt-1 post-content">
             <%= simple_format(@post.content) %>
+            <div class="pb-3">
+              <%= image_tag @post.img.url if @post.img? %>
+            </div>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ class TimelinesController < Users::BaseController
     @post = @user.posts.build(post_params)
     if @post.save
       #アラート機能
-      # flash[:success] = '投稿が完了しました。'
+      flash[:success] = '投稿が完了しました。'
       # タイムライン一覧ページにリダイレクト
       redirect_to action: :new
     else
@@ -33,6 +33,6 @@ class TimelinesController < Users::BaseController
   end
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :img)
   end
 end

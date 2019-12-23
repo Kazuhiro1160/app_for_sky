@@ -1,7 +1,20 @@
-<div class="pb-5 post-field">
-  <%= form_for(@post, url: timelines_path) do |f| %>
+<div class="pb-3 post-field">
+  <%= form_for(@post, url: user_timelines_path) do |f| %>
   <div class="col-md-10 col-sm-12 d-inline-block" >
+    <div class="p-0">
     <%= f.text_area :content, rows: 3, placeholder: '共有したいこと、質問など',class: 'form-control' %>
+    </div>
+    <div class="col-sm-12 align-middle mt-2">
+      <%= f.label :img, class: "mb-none" do %>
+        <i class="far fa-image fa-2x" ></i>
+      <% end %>
+      <%= f.file_field :img , class: "form-image" %>
+      <span class="float-right">
+
+      <img id="img1" style="width:100px; height: auto" />
+      </span>
+    </div>
+
   </div>
 
   <div class="col-md-2 float-md-right pt-md-5 text-right text-md-left" >
@@ -10,3 +23,28 @@
 
   <% end %>
 </div>
+<script>
+    $(function(){
+        $('#post_img').change(function(e){
+            //ファイルオブジェクトを取得する
+            var file = e.target.files[0];
+            var reader = new FileReader();
+
+            //画像でない場合は処理終了
+            if(file.type.indexOf("image") < 0){
+                alert("画像ファイルを指定してください。");
+                return false;
+            }
+
+            //アップロードした画像を設定する
+            reader.onload = (function(file){
+                return function(e){
+                    $("#img1").attr("src", e.target.result);
+                    $("#img1").attr("title", file.name);
+                };
+            })(file);
+            reader.readAsDataURL(file);
+
+        });
+    });
+</script>

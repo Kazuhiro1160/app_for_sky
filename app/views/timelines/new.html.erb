@@ -6,7 +6,7 @@
         <div class="card-header border-bottom card-header-set" >
 <!--          メインパスに戻るアイコン設置-->
           <%= link_to edit_users_user_main_path(@user) do %>
-             <button class="float-left ml-md-1 text-white border-0" style="background-color: rgba(0,0,0,0)">
+             <button class="float-left ml-md-1 text-white border-0 button-rgba">
                <i class="fas fa-chevron-left fa-2x"></i>
              </button>
           <% end %>
@@ -31,6 +31,9 @@
                 <small class="text-muted"><%= Common.date_display(post.created_at) %></small><br>
                 <div class="p-2 mt-1 post-content">
                   <%= simple_format(post.content) %>
+                  <div class="pb-3 col-mid-12 img-resize">
+                    <%= image_tag post.img.url if post.img? %>
+                  </div>
                 </div>
                   <% if post.comments.size > 0  %>
                     <%= link_to thread_path(post.id), class: "btn btn-sm btn-primary mt-1", target: :_blank do %>
