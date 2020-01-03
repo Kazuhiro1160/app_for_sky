@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'favorites/create'
+  get 'favorites/destroy'
   root 'user_mains#edit'
   get 'errors/index'
 
@@ -18,10 +20,16 @@ Rails.application.routes.draw do
     resources :user_mains, only:[:edit, :update]
   end
 
-  resources :users do
-    resources :threads, shallow: true, only: :show
-    resources :timelines, shallow: true, only: [:new, :create, :destroy]
+  resources :comments, only: :show
+  resources :posts, only: [:new, :create, :destroy]
+
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
   end
+
+
+
+
 
   # mount ActionCable.server => '/cable'
 end

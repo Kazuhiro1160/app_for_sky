@@ -61,5 +61,18 @@ module Common
     r
   end
 
+  def file_icon(file_name)
+    file = file_name.to_s
+    if file.match?(/.pdf/)
+      return 'pdf'
+    elsif file.match?(/.xls/) || file.match?(/.xlsx/)
+      return 'excel'
+    elsif file.match?(/.doc/) || file.match?(/.docx/)
+      return 'word'
+    elsif file.match?(/.ppt/) || file.match?(/.pptx/)
+      return 'ppt'
+    end
+  end
+
 
 end

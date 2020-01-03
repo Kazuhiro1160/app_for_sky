@@ -1,4 +1,4 @@
-class TimelinesController < Users::BaseController
+class PostsController < Users::BaseController
   layout 'render_users_timeline'
   before_action :set_post
 
@@ -33,6 +33,6 @@ class TimelinesController < Users::BaseController
   end
 
   def post_params
-    params.require(:post).permit(:content, :img)
+    params.require(:post).permit(:content, :img, :file)
   end
 end

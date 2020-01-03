@@ -1,0 +1,3 @@
+$('#favorite_btns_<%= @post.id %>').html("<%= j(render partial: 'favorites/favorite', locals: {post: @post}) %>");
+$('#favorite_style_<%= @post.id %>').removeClass('btn-danger')
+$('#favorite_style_<%= @post.id %>').addClass('btn-outline-danger')

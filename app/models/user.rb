@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :favorites
+  has_many :favorite_posts, through: :favorites, source: :post
   validates :usr_login_id, presence: true, uniqueness: true, length:{maximum:14}
 
   scope :usr_new, -> (login_id) do

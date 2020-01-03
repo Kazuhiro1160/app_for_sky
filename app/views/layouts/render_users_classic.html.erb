@@ -22,7 +22,7 @@
         <%= render partial: "layouts/navbar" %>
 
         <%= yield %>
-        <% unless controller_name == 'timelines' %>
+        <% unless controller_name == 'posts' %>
          <%= render partial: "layouts/footer" %>
         <% end %>
 

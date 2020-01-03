@@ -23,9 +23,35 @@
           <br>
           <small class="text-muted"><%= Common.date_display(@post.created_at) %></small><br>
           <div class="p-2 mt-1 post-content">
-            <%= simple_format(@post.content) %>
-            <div class="pb-3">
-              <%= image_tag @post.img.url if @post.img? %>
+              <% if @post.file? %>
+                <div class="d-inline-block border p-1 mb-1" style="background-color: white">
+                  <% if Common.file_icon(@post.file) == 'pdf' %>
+                    <i class="fas fa-file-pdf fa-2x mr-1"></i>
+                  <% elsif Common.file_icon(@post.file) == 'excel' %>
+                    <i class="fas fa-file-excel fa-2x mr-1"></i>
+                  <% elsif Common.file_icon(@post.file) == 'word' %>
+                    <i class="fas fa-file-word fa-2x mr-1"></i>
+                  <% elsif Common.file_icon(@post.file) == 'ppt' %>
+                    <i class="fas fa-file-powerpoint fa-2x mr-1"></i>
+                  <% else %>
+                    <i class="fas fa-file-alt fa-2x mr-1"></i>
+                  <% end %>
+                  <a href="<%= @post.file.url %>" target="_blank">
+                    <%= @post.file %>
+                  </a>
+                  </div>
+                <% end %>
+            <div class="border text-sm text-muted p-2 mt-1">
+              <%= simple_format(@post.content) %>
+            </div>
+            <div class="pb-3 col-mid-12 img-resize">
+              <% if @post.img? %>
+                <% if @post.img.file.content_type.include?('image/') %>
+                  <%= image_tag @post.img.url(:thumb), class: "pt-2" %>
+                <% else %>
+                  <%= video_tag @post.img.url,width: "350", height: "350", controls: true, autobuffer: true, class: "pt-2" %>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>
