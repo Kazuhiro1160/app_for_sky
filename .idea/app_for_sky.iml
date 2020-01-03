@@ -571,6 +571,24 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="excon (vbundled(0.71.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/excon-0.71.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/excon-0.71.1/data" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/excon-0.71.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/excon-0.71.1/data" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/excon-0.71.1/data" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="execjs (vbundled(2.7.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -645,6 +663,87 @@
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.3/ext" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/ffi-1.11.3/samples" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fog-aws (vbundled(3.5.2)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-aws-3.5.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-aws-3.5.2/tests" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-aws-3.5.2/gemfiles" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-aws-3.5.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-aws-3.5.2/tests" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-aws-3.5.2/gemfiles" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-aws-3.5.2/tests" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-aws-3.5.2/gemfiles" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fog-core (vbundled(2.2.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-core-2.2.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-core-2.2.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-core-2.2.0/.github" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-core-2.2.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-core-2.2.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-core-2.2.0/.github" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-core-2.2.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-core-2.2.0/.github" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fog-json (vbundled(1.2.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-json-1.2.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-json-1.2.0/test" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-json-1.2.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-json-1.2.0/test" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-json-1.2.0/test" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fog-xml (vbundled(0.1.3)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-xml-0.1.3/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-xml-0.1.3/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-xml-0.1.3/gemfiles" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-xml-0.1.3/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-xml-0.1.3/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-xml-0.1.3/gemfiles" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-xml-0.1.3/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/fog-xml-0.1.3/gemfiles" />
         </excluded>
       </library>
     </orderEntry>
@@ -745,6 +844,24 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/image_processing-1.10.0/lib" />
         </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ipaddress (vbundled(0.8.3)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/ipaddress-0.8.3/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/ipaddress-0.8.3/test" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/ipaddress-0.8.3/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/ipaddress-0.8.3/test" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/ipaddress-0.8.3/test" />
+        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -914,6 +1031,45 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="mime-types (vbundled(3.3.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-3.3.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-3.3.1/test" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-3.3.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-3.3.1/test" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-3.3.1/test" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mime-types-data (vbundled(3.2019.1009)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-data-3.2019.1009/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-data-3.2019.1009/data" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-data-3.2019.1009/types" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-data-3.2019.1009/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-data-3.2019.1009/data" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-data-3.2019.1009/types" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-data-3.2019.1009/data" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/mime-types-data-3.2019.1009/types" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="mimemagic (vbundled(0.3.3)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1032,6 +1188,19 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.1/bench" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.1/doclib" />
         </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="multi_json (vbundled(1.14.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/multi_json-1.14.1/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.5.0/gems/multi_json-1.14.1/lib" />
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
