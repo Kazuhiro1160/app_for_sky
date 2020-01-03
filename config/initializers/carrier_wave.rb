@@ -4,9 +4,9 @@ if Rails.env.production?
         # Amazon S3用の設定
         :provider              => 'AWS',
         :region                => ENV['ap-northeast-1'],     # 例: 'ap-northeast-1'
-        :aws_access_key_id     => ENV['AKIAWNRTPOS3L6UW37XZ'],
-        :aws_secret_access_key => ENV['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']
+        :aws_access_key_id     => ENV['AKIAX67STLBEZZHNNSUS'],
+        :aws_secret_access_key => ENV['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']
     }
-    config.fog_directory     =  ENV['bucket-for-slat']
+    config.fog_directory     =  ENV['app-slat-bucket']
   end
 end
