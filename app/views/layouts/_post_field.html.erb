@@ -2,19 +2,23 @@
   <%= form_for(@post, url: posts_path) do |f| %>
   <div class="col-md-10 col-sm-12 d-inline-block" >
     <div class="p-0">
-    <%= f.text_area :content, rows: 3, placeholder: '共有したいこと、質問など',class: 'form-control' %>
+    <%= f.text_area :content, rows: 4, placeholder: '共有したいこと、質問など',class: 'form-control' %>
     </div>
-    <div>
+    <div class="icon-pointer">
       <i class="far fa-image fa-2x mr-1" id="img_input_disp"></i>
       <i class="fas fa-folder fa-2x" id="file_input_disp"></i>
     </div>
 
       <div class="mt-2">
         <div class="input-group input-group1 mb-1" style="display: none">
-          <i class="fas fa-minus-circle my-auto mr-2" id="img_input_delete"></i>
+          <div class="input-group-prepend">
+            <button type="button" class="btn btn-danger" id="img_input_delete">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
           <div class="custom-file">
-            <%= f.file_field :img, accept: 'image/jpeg,image/gif,image/png,video/*', class: "custom-file-input" %>
-            <label class="custom-file-label" for="post_img" data-browse="画像＆動画">ファイル選択...</label>
+            <%= f.file_field :img, accept: 'image/*, video/* ', class: "custom-file-input"%>
+            <label class="custom-file-label " for="post_img" data-browse="＠" style="overflow-x : scroll ">画像・動画選択...</label>
           </div>
           <div class="input-group-append">
             <button type="button" class="btn btn-outline-secondary reset reset1">取消</button>
@@ -23,78 +27,99 @@
 
 
         <div class="input-group input-group2 mb-1" style="display: none">
-          <i class="fas fa-minus-circle my-auto mr-2" id="file_input_delete"></i>
+          <div class="input-group-prepend">
+            <button type="button" class="btn btn-danger" id="file_input_delete">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
           <div class="custom-file">
             <%= f.file_field :file, accept: 'application/* ,text/*', class: "custom-file-input"  %>
-            <label class="custom-file-label" for="file_img" data-browse="文書">ファイル選択...</label>
+            <label class="custom-file-label" for="file_img" data-browse="＠" style="overflow-x : scroll ">ファイル選択...</label>
           </div>
           <div class="input-group-append">
-            <button type="button" class="btn btn-outline-secondary reset">取消</button>
+            <button type="button" class="btn btn-outline-secondary reset reset2">取消</button>
           </div>
         </div>
       </div>
-    <div class="img-frame" style="display: none;">
+    <div class="img-frame pl-1" style="display: none;">
       <img id="img1" style="width: auto; max-height: 5rem"/>
     </div>
-
-
-
   </div>
 
-  <div class="col-md-2 float-md-right pt-md-5 text-right text-md-left" >
-    <button type="submit" class="btn-lg btn-primary "> 送信 </button>
+  <div class="post-btn col-md-2 float-md-right pt-md-4 text-right text-md-left" >
+    <button type="submit" class="btn-lg btn-warning "> 送信 </button>
   </div>
-
   <% end %>
 </div>
+
+
+
 <script>
+    $('#post_img').click(function () {
+        $('#post_img').val('');
+        $('.reset1').parent().prev().children('.custom-file-label').html('画像・動画選択...');
+        $("#img1").attr('src', '')
+    })
+
+    $('#post_file').click(function () {
+        $('#post_file').val('');
+        $('.reset2').parent().prev().children('.custom-file-label').html('ファイル選択...');
+    })
+
     $('.custom-file-input').on('change',function(){
         $(this).next('.custom-file-label').html($(this)[0].files[0].name);
     })
     //ファイルの取消
-    $('.reset').click(function(){
+    $('.reset1').click(function(){
+        $(this).parent().prev().children('.custom-file-label').html('画像・動画選択...');
+        $('#post_img').val('');
+        $("#img1").attr('src', '');
+    })
+
+    $('.reset2').click(function(){
         $(this).parent().prev().children('.custom-file-label').html('ファイル選択...');
-        $('.custom-file-input').val('');
-        $("#img1").attr('src', '')
+        $('#post_file').val('');
     })
 
     $("#img_input_disp").click(function(){
         $(".input-group1").css('display', '');
+        $('#post_img').val('');
 
     })
     $("#file_input_disp").click(function(){
         $(".input-group2").css('display', '');
-
+        $('#post_file').val('');
     })
 
     $("#img_input_delete").click(function () {
         $(".img-frame").css('display', 'none');
         $(".input-group1").css('display', 'none');
-        $('.reset1').parent().prev().children('.custom-file-label').html('ファイル選択...');
-        $("#img1").attr('src', '')
+        $('.reset1').parent().prev().children('.custom-file-label').html('画像・動画選択...');
+        $("#img1").attr('src', '');
+        $('#post_img').val('');
     })
 
     $("#file_input_delete").click(function () {
         $(".input-group2").css('display', 'none');
         $('.reset2').parent().prev().children('.custom-file-label').html('ファイル選択...');
+        $('#post_file').val('');
     })
 
-    // document.getElementById("img-frame").style.display = "none";
-    // document.getElementById("file-frame").style.display = "none";
-    //
-    // $(function(){
+
+
         $('#post_img').change(function(e){
             $(".img-frame").css('display', '');
             //ファイルオブジェクトを取得する
             var file = e.target.files[0];
             var reader = new FileReader();
 
-
-            // //画像でない場合は処理終了
-            // if(file.type.indexOf("image/") < 0 && file.type.indexOf("video/") < 0){
-            //     alert("画像、または動画ファイルを指定してください。");
-            //     return false;
-            // }
+            //画像でない場合は処理終了
+            if(file.type.indexOf("image/") < 0 && file.type.indexOf("video/") < 0){
+                $('#post_img').val('');
+                $('.reset1').parent().prev().children('.custom-file-label').html('画像・動画選択...');
+                alert("画像・動画ファイルを指定してください。");
+                return false;
+            }
             // //容量が５MB以上はアラート
             // var size_in_megabytes = this.files[0].size/1024/1024;
             // if (size_in_megabytes > 5) {
@@ -116,14 +141,20 @@
     //
     //
         });
-    //     $('#post_file').change(function(e){
-    //         const f_frame = document.getElementById("file-frame");
-    //
-    //         //ファイルオブジェクトを取得する
-    //         var file = e.target.files[0];
-    //         var reader = new FileReader();
-    //
-    //
+        $('#post_file').change(function(e) {
+
+            //ファイルオブジェクトを取得する
+            var file = e.target.files[0];
+
+            //画像でない場合は処理終了
+            if(file.type.indexOf("image/") == 0 || file.type.indexOf("video/") == 0){
+                $('#post_file').val('');
+                $('.reset2').parent().prev().children('.custom-file-label').html('ファイル選択...');
+                alert("画像、動画ファイル以外を指定してください。");
+                return false;
+            }
+
+        });
     //         //アップロードした画像を設定する
     //         reader.onload = (function(file){
     //             return function(e){
@@ -163,7 +194,6 @@
     //       // f_frame.remove();
     //
     //   });
-    // });
 
 
 

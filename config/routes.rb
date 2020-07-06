@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'favorites/destroy'
   root 'user_mains#edit'
   get 'errors/index'
-
   devise_for :admins, :controllers => {
 
   }

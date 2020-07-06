@@ -41,13 +41,13 @@
                   </a>
                   </div>
                 <% end %>
-            <div class="border text-sm text-muted p-2 mt-1">
-              <%= simple_format(@post.content) %>
+            <div class=" p-2">
+              <%= simple_format(text_url_to_link(h(@post.content)), {}, sanitize: false) %>
             </div>
             <div class="pb-3 col-mid-12 img-resize">
               <% if @post.img? %>
                 <% if @post.img.file.content_type.include?('image/') %>
-                  <%= image_tag @post.img.url(:thumb), class: "pt-2" %>
+                  <%= image_tag @post.img.url(:thumb), class: "img-style mt-2" %>
                 <% else %>
                   <%= video_tag @post.img.url,width: "350", height: "350", controls: true, autobuffer: true, class: "pt-2" %>
                 <% end %>

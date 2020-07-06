@@ -16,6 +16,14 @@ class Post < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  # def img_valid?
+  #   if img.file.content_type != "image/jpeg"
+  #     errors.add(:avatar, "不正なファイルが添付されています。")
+  #   end
+  # end
+
+
+
   private
 
   # def img_size

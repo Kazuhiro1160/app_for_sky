@@ -43,6 +43,17 @@
     }
 }
 
+.aw-color{
+    color: #495057;
+}
+
+.img-style{
+    border-radius: 0.25rem;
+}
+
+.icon-pointer i{
+    cursor: pointer;
+}
 /*.media-body:hover{*/
 /*    background-color: #f2f2f2;*/
 /*}*/
