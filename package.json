@@ -31,7 +31,7 @@
     "sass-loader": "7.2.0",
     "script-loader": "0.7.2",
     "style-loader": "1.0.0",
-    "tempusdominus-core": "5.0.3",
+    "tempusdominus-core": "5.19.3",
     "terser-webpack-plugin": "1.4.1",
     "url-loader": "2.1.0",
     "webpack": "4.39.1",
